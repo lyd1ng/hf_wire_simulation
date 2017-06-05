@@ -1,0 +1,33 @@
+######################
+  ######################
+    #   Leitungs-    #####
+    #   Simulation   #####
+  ######################
+######################
+
+Parameter
+=========
+
+[ { !gamma }, { R, L, C, G } ]	: Leitungseigenschaften
+
+[ { l } ]			: Leitungslaege
+
+[ { !roh(l) }, { Z_L, Z(l) } ]	: Leitungsabschluss
+
+[ { f }, { !w } ]		: (Kreis) - Frequenz
+
+[ { U_max, I_max } ]		: Spannungs-, Stromamplitude
+
+[ { T_max } ]			: Simulationsdauer
+
+[ { Delta_T } ]			: Simulationszeitschritt
+
+[ { plott_roh } ] 		: Should roh also be plotted
+
++---------------------------------------+
+| Every parameter has to be specified!  |
+| Parameters with "!" are the parametrs |
+| used by the "backbone"                |
++---------------------------------------+
+
+

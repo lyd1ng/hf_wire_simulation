@@ -1,0 +1,40 @@
+set terminal gif animate delay delay
+set output out
+set yrange [-range:range]
+set zrange [-range:range]
+
+set style arrow 1 linecolor rgb color1
+set style arrow 2 linecolor rgb color2
+set style arrow 3 linecolor rgb color3
+
+number_of_plots = 0
+if (in1 ne "0") {
+	number_of_plots = number_of_plots + 1
+}
+if (in2 ne "0") {
+	number_of_plots = number_of_plots + 1
+}
+if (in3 ne "0") {
+	number_of_plots = number_of_plots + 1
+}
+
+if (number_of_plots == 0) {
+	print "No input file was specified"
+	exit
+}
+
+file_names = in1 ." ". in2 ." ".  in3
+
+stats in1 nooutput
+
+set view x_angle, z_angle, scale, scale_z
+
+do for [i=1:int(STATS_blocks)] {
+	set multiplot
+	do for [j=number_of_plots:1:-1] {
+		splot word(file_names, number_of_plots-j+1) index (i-1) with vectors arrowstyle number_of_plots-j+1
+	}
+	unset multiplot
+}
+
+set output
