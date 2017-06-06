@@ -1,0 +1,1 @@
+gnuplot -e "in1='test.roh'; in2='test.voltage'; in3='test.current'; out='multi.gif'; range='5'; color1='black'; color2='blue'; color3='red'; delay='100'; x_angle='45'; z_angle='45'; scale='1.0'; scale_z='1.0'" postprocess.plg
