@@ -8,26 +8,87 @@
 Parameter
 =========
 
-[ { !gamma }, { R, L, C, G } ]	: Leitungseigenschaften
-
-[ { l } ]			: Leitungslaege
-
-[ { !roh(l) }, { Z_L, Z(l) } ]	: Leitungsabschluss
-
-[ { f }, { !w } ]		: (Kreis) - Frequenz
-
-[ { U_max, I_max } ]		: Spannungs-, Stromamplitude
-
-[ { T_max } ]			: Simulationsdauer
-
-[ { Delta_T } ]			: Simulationszeitschritt
-
-[ { plott_roh } ] 		: Should roh also be plotted
-
 +---------------------------------------+
 | Every parameter has to be specified!  |
 | Parameters with "!" are the parametrs |
 | used by the "backbone"                |
 +---------------------------------------+
 
+[ { !gamma }, { R, L, C, G } ]	: gamma, electrical characteristics
 
+[ { l } ]			: Wire length
+
+[ { !roh(l) }, { Z_L, Z(l) } ]	: Reflectionfactor, characteristic Impedance, term. Imped.
+
+[ { f }, { !w } ]		: (circular) - Frequenz
+
+[ { U } ]			: Spannungsamplitude
+
+[ { T } ]			: Simulationtime
+
+[ { dt } ]			: Timesteps 
+
+[ { s } ]			: Number of samples
+
+[ { plott_u } ] 		: Should the voltage be plotted
+
+[ { plott_i } ] 		: Should the current be plotted
+
+[ { plott_r } ] 		: Should roh be plotted
+
+[ { output_path } ]		: Where to stopre the output files
+
+[ { gif } ]			: Should the files be postproccessed using gnuplot
+
+[ { gif_delay } ]		: The gif animate delay
+
+[ { gif_view_x } ]		: The x view angle of the gif
+
+[ { gif_view_z } ]		: The z view angle of the gif
+
+[ { gif_scale } ]		: The view scale of the gif
+
+[ { gif_scale_z } ]		: The view z scale of the 
+
+
+Usage Output:
+=============
+usage: main.py [-h] [-y GAMMA] [-R R] [-L L] [-C C] [-G G] [-l L] [-r R]
+               [--Z_L Z_L] [--Zl ZL] [-f F] [-w W] [-U U] [-T T] [--dt DT]
+               [-s NUMBER_OF_SAMPLES] [--plot_u PLOT_U] [--plot_i] [--plot_r]
+               [-o OUTPUT_PATH] [--gif] [--gif_delay GIF_DELAY]
+               [--gif_view_x GIF_VIEW_X] [--gif_view_z GIF_VIEW_Z]
+               [--gif_scale GIF_SCALE] [--gif_scale_z GIF_SCALE_Z]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -y GAMMA              Complex wire parameter
+  -R R                  Ohm per cm
+  -L L                  Inductivity per cm
+  -C C                  Conductivty per cm
+  -G G                  Moh per cm
+  -l L                  Wire length
+  -r R                  Reflection factor
+  --Z_L Z_L             Characteristic impedance
+  --Zl ZL               Terminal resistance
+  -f F                  Signal frequency
+  -w W                  Circular signal frequency
+  -U U                  Voltage amplitude
+  -T T                  Maximal simulation time
+  --dt DT               Simulation time step
+  -s NUMBER_OF_SAMPLES  Number of samples
+  --plot_u PLOT_U       Plot voltage
+  --plot_i              Plot current
+  --plot_r              Plot Roh
+  -o OUTPUT_PATH        Where to store the output files
+  --gif                 Should the files be postprocessed using gnuplot
+  --gif_delay GIF_DELAY
+                        The gif animate delay
+  --gif_view_x GIF_VIEW_X
+                        The x view angle of the gif
+  --gif_view_z GIF_VIEW_Z
+                        The z view angle of the gif
+  --gif_scale GIF_SCALE
+                        The view scale of the gif
+  --gif_scale_z GIF_SCALE_Z
+                        The z view scale of the gif
