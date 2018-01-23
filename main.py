@@ -206,7 +206,8 @@ if args.gif:
             scale='" + str(args.gif_scale) + "';\
             scale_z='" + str(args.gif_scale_z) + "';\
             omega='" + str(args.w) + "';\
-            gamma='" + str(args.gamma) + "'\" postprocess.plg")
+            gamma='" + str(args.gamma) + "';\
+            r='" + str(args.r) + "'\" postprocess.plg")
 
     if args.plot_i:
         output_path = args.output_path + ".current"
@@ -227,7 +228,8 @@ if args.gif:
             scale='" + str(args.gif_scale) + "';\
             scale_z='" + str(args.gif_scale_z) + "';\
             omega='" + str(args.w) + "';\
-            gamma='" + str(args.gamma) + "'\" postprocess.plg")
+            gamma='" + str(args.gamma) + "';\
+            r='" + str(args.r) + "'\" postprocess.plg")
 
 
 
@@ -250,7 +252,8 @@ if args.gif:
             scale='" + str(args.gif_scale) + "';\
             scale_z='" + str(args.gif_scale_z) + "';\
             omega='" + str(args.w) + "';\
-            gamma='" + str(args.gamma) + "'\" postprocess.plg")
+            gamma='" + str(args.gamma) + "';\
+            r='" + str(args.r) + "'\" postprocess.plg")
 
 
 

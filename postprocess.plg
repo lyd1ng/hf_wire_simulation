@@ -29,7 +29,7 @@ stats in1 nooutput
 
 set view x_angle, z_angle, scale, scale_z
 
-set title sprintf("f: %s\ny: %s", omega, gamma)
+set title sprintf("f: %s; y: %s\nx_angle: %s; z_angle: %s; r: %s", omega, gamma, x_angle, z_angle, r) noenhanced
 
 do for [i=1:int(STATS_blocks)] {
 	set multiplot
