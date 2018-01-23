@@ -1,58 +1,10 @@
-######################
-  ######################
-    #   Leitungs-    #####
-    #   Simulation   #####
-  ######################
-######################
+# What is the hf_wire_simulation?
 
-Parameter
-=========
+The hf_wire_simulation is a simulation programm written in python2
+to simulate the voltage, current and roh of a hf signal.
+The result can be exported to animated gifs using gnuplot.
+This project will be converted to python3 soon.
 
-+---------------------------------------+
-| Every parameter has to be specified!  |
-| Parameters with "!" are the parametrs |
-| used by the "backbone"                |
-+---------------------------------------+
-
-[ { !gamma }, { R, L, C, G } ]	: gamma, electrical characteristics
-
-[ { l } ]			: Wire length
-
-[ { !roh(l) }, { Z_L, Z(l) } ]	: Reflectionfactor, characteristic Impedance, term. Imped.
-
-[ { f }, { !w } ]		: (circular) - Frequenz
-
-[ { U } ]			: Spannungsamplitude
-
-[ { T } ]			: Simulationtime
-
-[ { dt } ]			: Timesteps 
-
-[ { s } ]			: Number of samples
-
-[ { plott_u } ] 		: Should the voltage be plotted
-
-[ { plott_i } ] 		: Should the current be plotted
-
-[ { plott_r } ] 		: Should roh be plotted
-
-[ { output_path } ]		: Where to stopre the output files
-
-[ { gif } ]			: Should the files be postproccessed using gnuplot
-
-[ { gif_delay } ]		: The gif animate delay
-
-[ { gif_view_x } ]		: The x view angle of the gif
-
-[ { gif_view_z } ]		: The z view angle of the gif
-
-[ { gif_scale } ]		: The view scale of the gif
-
-[ { gif_scale_z } ]		: The view z scale of the 
-
-
-Usage Output:
-=============
 usage: main.py [-h] [-y GAMMA] [-R R] [-L L] [-C C] [-G G] [-l L] [-r R]
                [--Z_L Z_L] [--Zl ZL] [-f F] [-w W] [-U U] [-T T] [--dt DT]
                [-s NUMBER_OF_SAMPLES] [--plot_u PLOT_U] [--plot_i] [--plot_r]
@@ -60,6 +12,7 @@ usage: main.py [-h] [-y GAMMA] [-R R] [-L L] [-C C] [-G G] [-l L] [-r R]
                [--gif_view_x GIF_VIEW_X] [--gif_view_z GIF_VIEW_Z]
                [--gif_scale GIF_SCALE] [--gif_scale_z GIF_SCALE_Z]
 
+```
 optional arguments:
   -h, --help            show this help message and exit
   -y GAMMA              Complex wire parameter
@@ -92,3 +45,4 @@ optional arguments:
                         The view scale of the gif
   --gif_scale_z GIF_SCALE_Z
                         The z view scale of the gif
+```
