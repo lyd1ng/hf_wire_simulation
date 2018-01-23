@@ -204,7 +204,9 @@ if args.gif:
             x_angle='" + str(args.gif_view_x) + "';\
             z_angle='" + str(args.gif_view_z) + "';\
             scale='" + str(args.gif_scale) + "';\
-            scale_z='" + str(args.gif_scale_z) + "'\" postprocess.plg")
+            scale_z='" + str(args.gif_scale_z) + "';\
+            omega='" + str(args.w) + "';\
+            gamma='" + str(args.gamma) + "'\" postprocess.plg")
 
     if args.plot_i:
         output_path = args.output_path + ".current"
@@ -223,7 +225,10 @@ if args.gif:
             x_angle='" + str(args.gif_view_x) + "';\
             z_angle='" + str(args.gif_view_z) + "';\
             scale='" + str(args.gif_scale) + "';\
-            scale_z='" + str(args.gif_scale_z) + "'\" postprocess.plg")
+            scale_z='" + str(args.gif_scale_z) + "';\
+            omega='" + str(args.w) + "';\
+            gamma='" + str(args.gamma) + "'\" postprocess.plg")
+
 
 
     if args.plot_r:
@@ -243,6 +248,9 @@ if args.gif:
             x_angle='" + str(args.gif_view_x) + "';\
             z_angle='" + str(args.gif_view_z) + "';\
             scale='" + str(args.gif_scale) + "';\
-            scale_z='" + str(args.gif_scale_z) + "'\" postprocess.plg")
+            scale_z='" + str(args.gif_scale_z) + "';\
+            omega='" + str(args.w) + "';\
+            gamma='" + str(args.gamma) + "'\" postprocess.plg")
+
 
 
