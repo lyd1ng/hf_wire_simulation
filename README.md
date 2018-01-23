@@ -5,6 +5,7 @@ to simulate the voltage, current and roh of a hf signal.
 The result can be exported to animated gifs using gnuplot.
 This project will be converted to python3 soon.
 
+```
 usage: main.py [-h] [-y GAMMA] [-R R] [-L L] [-C C] [-G G] [-l L] [-r R]
                [--Z_L Z_L] [--Zl ZL] [-f F] [-w W] [-U U] [-T T] [--dt DT]
                [-s NUMBER_OF_SAMPLES] [--plot_u PLOT_U] [--plot_i] [--plot_r]
@@ -12,7 +13,6 @@ usage: main.py [-h] [-y GAMMA] [-R R] [-L L] [-C C] [-G G] [-l L] [-r R]
                [--gif_view_x GIF_VIEW_X] [--gif_view_z GIF_VIEW_Z]
                [--gif_scale GIF_SCALE] [--gif_scale_z GIF_SCALE_Z]
 
-```
 optional arguments:
   -h, --help            show this help message and exit
   -y GAMMA              Complex wire parameter
