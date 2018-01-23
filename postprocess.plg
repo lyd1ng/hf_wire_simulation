@@ -34,7 +34,7 @@ set title sprintf("f: %s\ny: %s", omega, gamma)
 do for [i=1:int(STATS_blocks)] {
 	set multiplot
 	do for [j=number_of_plots:1:-1] {
-		splot word(file_names, number_of_plots-j+1) index (i-1) with vectors arrowstyle number_of_plots-j+1
+		splot word(file_names, number_of_plots-j+1) index (i-1) with vectors arrowstyle number_of_plots-j+1 notitle
 	}
 	unset multiplot
 }
