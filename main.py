@@ -135,8 +135,8 @@ parser.add_argument("--gif_scale_z", dest="gif_scale_z", default="1.0", help="Th
 # Parse parameters
 args = parser.parse_args()
 if post_process_parameters(args) is False:
-    print "Parameters missing!"
-    print "use -h/--help for further help"
+    print("Parameters missing!")
+    print("use -h/--help for further help")
     exit(-1)
 
 # Calculate all vectors and store them in lists of gnuplot_vector3 instances
