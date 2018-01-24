@@ -1,9 +1,8 @@
 # What is the hf_wire_simulation?
 
-The hf_wire_simulation is a simulation programm written in python2
+The hf_wire_simulation is a simulation programm written in python
 to simulate the voltage, current and roh of a hf signal.
 The result can be exported to animated gifs using gnuplot.
-This project will be converted to python3 soon.
 
 ```
 usage: main.py [-h] [-y GAMMA] [-R R] [-L L] [-C C] [-G G] [-l L] [-r R]
