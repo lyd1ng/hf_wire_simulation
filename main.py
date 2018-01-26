@@ -126,7 +126,7 @@ parser.add_argument("--plot_i", dest="plot_i", default=False, action="store_true
 parser.add_argument("--plot_r", dest="plot_r", default=False, action="store_true", help="Plot Roh")
 parser.add_argument("-o", dest="output_path", help="Where to store the output files")
 parser.add_argument("--gif", dest="gif", default=False, action="store_true", help="Should the files be postprocessed using gnuplot")
-parser.add_argument("--gif_delay", dest="gif_delay", default=-1, help="The gif animate delay")
+parser.add_argument("--gif_delay", dest="gif_delay", type=float, default=-1, help="The gif animate delay")
 parser.add_argument("--gif_view_x", dest="gif_view_x", default="45.0", help="The x view angle of the gif")
 parser.add_argument("--gif_view_z", dest="gif_view_z", default="45.0", help="The z view angle of the gif")
 parser.add_argument("--gif_scale", dest="gif_scale", default="1.0", help="The view scale of the gif")
