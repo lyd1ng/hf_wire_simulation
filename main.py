@@ -51,19 +51,30 @@ def post_process_parameters(p):
     p.r = parse_complex(p.r)
     p.Z_L = parse_complex(p.Z_L)
     p.Zl = parse_complex(p.Zl)
+    error_string = ""
+    error = False
 
+    if p.l is None:
+        error_string += "The l parameter has to be specified\n"
+        error = True
     if p.T is None:
-        return False, "The T parameter has to be specified"
+        error_string += "The T parameter has to be specified\n"
+        error = True
+    if p.dt is None:
+        error_string += "The dt parameter has to be specified\n"
+        error = True
 
     if p.T < 0:
         if p.dt is None:
-            return False, "The dt parameter has to be specified"
+            error_string += "The dt parameter has to be specified\n"
+            error = True
         else:
             p.dt = p.dt * -1
 
     if p.w is None:
         if p.f is None:
-            return False, "Neither w nor f parameter is specified"
+            error_string += "Neither w nor f parameter is specified\n"
+            error = True
         else:
             p.w = float(2 * cmath.pi * float(p.f))
     else:
@@ -71,7 +82,8 @@ def post_process_parameters(p):
 
     if p.gamma is None:
         if p.R is None or p.L is None or p.C is None or p.G is None:
-            return False, "Neither gamma nor R, L, C and G is specified"
+            error_string += "Neither gamma nor R, L, C and G is specified\n"
+            error = True
         else:
             p.gamma = cmath.sqrt((p.R + p.w * p.L * j) * (p.G + p.w * p.C * j))
     else:
@@ -79,7 +91,7 @@ def post_process_parameters(p):
 
     if p.r is None:
         if p.Z_L is None or p.Zl is None:
-            return False, "Neither r nor Z_L or Zl is specified"
+            error_string += "Neither r nor Z_L or Zl is specified\n"
         else:
             p.r = (p.Zl - p.Z_L) / (p.Zl + p.Z_L)
     else:
@@ -87,12 +99,12 @@ def post_process_parameters(p):
 
     if p.gif is True:
         if p.gif_delay < 0:
-            return False, "The gif_delay parameter has to be specified"
+            error_string += "The gif_delay parameter has to be specified"
+            error = True
 
-    for entry in vars(p).values():
-        if entry is None:
-            return False, "Unknown error"
-    return True, ""
+    if error:
+        print(error_string)
+        exit(-1)
 
 
 def calculate_u(z, t):
@@ -159,14 +171,7 @@ parser.add_argument("--gif_scale_z", dest="gif_scale_z",
 
 # Parse parameters
 args = parser.parse_args()
-post_process_parameters_result = post_process_parameters(args)
-if post_process_parameters_result[0] is False:
-    print("Parameters missing!")
-    # The second entry of the post_process_parameters_result is the
-    # error string.
-    print(post_process_parameters_result[1])
-    print("use -h/--help for further help")
-    exit(-1)
+post_process_parameters(args)
 
 # Calculate all vectors and store them in lists of gnuplot_vector3 instances
 t = 0
