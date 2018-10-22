@@ -19,7 +19,7 @@ r_vectors = list()
 
 # Cause of a bug in the argparse module negative complexe numbers
 # have to be seperated by a whitespace (in the parameter list)
-# which cant be parsed thats  why their are stripped bevore
+# which cant be parsed. Thats  why their are stripped bevore
 # using complex(..) to parse them
 
 
